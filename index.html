@@ -1,9 +1,10 @@
+Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Hippie Lottery</title>
+  <title>The Kapu Lottery</title>
   <!-- Add Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1z7rJr59U7z8/7+ol7kzgO5k5ulTio2f3ax4Sf" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
@@ -19,13 +20,27 @@
       font-family: Arial, sans-serif;
       margin: 0;
     }
+      /* Custom styles for the Share on Twitter button */
+      #shareOnTwitterBtn {
+      background-color: rgb(47, 36, 243);
+      border: none;
+      border-radius: 5px;
+      color: rgb(105, 200, 235);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 2rem;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    #shareOnTwitterBtn:hover {
+      background-color: dodgerblue;
+    }
   </style>
-  
 
 </head>
 <body>
-  
-
   <header>
     <div id="confetti-container"></div>
     <div class="container">
@@ -39,7 +54,6 @@
     </div>
   </header>
   
- 
   <main class="d-flex align-items-center justify-content-center min-vh-100">
     <div class="container">
       <div class="row">
@@ -53,29 +67,26 @@
 
           <p id="random-number-text"></p>
           <button id="generate-number-btn" class="btn btn-primary mb-3">Button of Fate</button>
+          <div id="tweetDialog" class="mt-2">
+
+          </div>
+
         </div>
-     
       </div>
-
     </div>
-   
-
   </main>
-  <!-- Add Bootstrap JS and its dependencies -->
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1z7rJr59U7z8/7+ol7kzgO5k5ulTio2f3ax4Sf" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7M4/6Sh5X4va4kf2erV0sqGjK4tX8rX3f3yTpbJb6D6F" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-  <script src="js/hippie.js"></script>
-
-  <script>
-const generateNumberBtn = document.getElementById("generate-number-btn");
-const randomNumberText = document.getElementById("random-number-text");
-
-generateNumberBtn.addEventListener("click", () => {
-  const randomNum = Math.floor(Math.random() * 10000000) + 1;
-  randomNumberText.textContent = `Your random number is: ${randomNum}`;
-    });
-  </script>
-</body>
-</html>
-
+   <!-- Add Bootstrap JS and its dependencies -->
+   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1z7rJr59U7z8/7+ol7kzgO5k5ulTio2f3ax4Sf" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7M4/6Sh5X4va4kf2erV0sqGjK4tX8rX3f3yTpbJb6D6F" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+   <script src="js/hippie.js"></script>
+ 
+   <script>
+     const generateNumberBtn = document.getElementById("generate-number-btn");
+     const randomNumberText = document.getElementById("random-number-text");
+ 
+     generateNumberBtn.addEventListener("click", () => {
+       const randomNum = Math.floor(Math.random() * 10000000) + 1;
+       randomNumberText.textContent = `Your random number is: ${randomNum}`;
+     });
+   </script>
